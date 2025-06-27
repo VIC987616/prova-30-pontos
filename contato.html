@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato | Fogo Nobre</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f4f4f4;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      color: #ff4500;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f4f4f4;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff4500;
+    }
+
+    .contato {
+      background-color: #1b1b1b;
+      color: #f4f4f4;
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      border-top: 2px solid #ff4500;
+    }
+
+    .contato h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #ff4500;
+    }
+
+    .contato p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .formulario-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .formulario-contato input,
+    .formulario-contato textarea {
+      padding: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .formulario-contato textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .formulario-contato button {
+      background-color: #ff4500;
+      color: #fff;
+      border: none;
+      padding: 0.9rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .formulario-contato button:hover {
+      background-color: #cc3700;
+    }
+
+    .mensagem-contato {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #2e2e2e;
+      border-left: 4px solid #00c853;
+      color: #00e676;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 2rem;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🔥 Fogo Nobre</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contato" id="contato">
+    <h2>Fale Conosco</h2>
+    <p>
+      Tem alguma dúvida, sugestão ou deseja realizar um evento conosco?<br>
+      Envie sua mensagem. A equipe Fogo Nobre terá prazer em atendê-lo.
+    </p>
+
+    <form class="formulario-contato" id="form-contato">
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu e-mail" required />
+      <input type="tel" placeholder="Telefone (opcional)" />
+      <textarea placeholder="Escreva sua mensagem..." required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+
+    <div class="mensagem-contato" id="mensagem-contato">
+      ✅ Sua mensagem foi enviada com sucesso!
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fogo Nobre Churrascaria. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const formContato = document.getElementById('form-contato');
+    const msgContato = document.getElementById('mensagem-contato');
+
+    formContato.addEventListener('submit', function (e) {
+      e.preventDefault();
+      formContato.reset();
+      msgContato.style.display = 'block';
+
+      setTimeout(() => {
+        msgContato.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
